@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link
+         href="https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap"
+         rel="stylesheet"/>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
+      <link rel="stylesheet" href="css/style.css" />
+      <title>Make Your Wish - Linoy Chubok</title>
+   </head>
+   <body>
+      <div id="blackScreen"></div>
+      <main>
+         <div id="genie"></div>
+         <div id="lamp" class="shakeIt"></div>
+         <ul id="smoke-right">
+            <li class="partOfSmoke"></li>
+            <li class="partOfSmoke"></li>
+            <li class="partOfSmoke"></li>
+            <li class="partOfSmoke"></li>
+            <li class="partOfSmoke"></li>
+         </ul>
+         <ul id="smoke-left">
+            <li class="partOfSmoke"></li>
+            <li class="partOfSmoke"></li>
+            <li class="partOfSmoke"></li>
+            <li class="partOfSmoke"></li>
+            <li class="partOfSmoke"></li>
+         </ul>
+         <div class="wrapper">
+            <div id="speech-bubble">
+               <form id="myForm" action="http://html5-book.co.il/teach/forms/get_form2.php" method="get">
+                  <label class="col-sm-4">
+                     <select id="ageInput" name="age" class="form-control inputs">
+                        <option disabled selected value>&nbsp;</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                     </select>
+                  </label>
+                  <label for="nameInput" class="bubbleText"></label>
+                  <div class="col-6">
+                     <input id="nameInput" class="inputs form-control" type="text"  name="fullName"  placeholder=""/>         
+                  </div>
+                  <label for="secretInput" class="bubbleText"></label>
+                  <div class="col-7">
+                     <input id="secretInput" class="inputs form-control" type="password" name="pass" />
+                  </div>
+                  <label for="emailInput" class="bubbleText"></label>
+                  <div class="col-7">
+                     <input id="emailInput" class="inputs form-control" type="email" name="mail" placeholder="Email"/>
+                  </div>
+                  <label for="websiteInput" class="bubbleText"></label>
+                  <div class="col-7">
+                     <input id="websiteInput" class="inputs form-control" type="url" name="website" />
+                  </div>
+                  <label for="idInput" class="bubbleText"></label>
+                  <div class="col-5">
+                     <input id="idInput" class="inputs form-control" type="tel" name="phone" minlength="9" maxlength="10" />
+                  </div>
+                  <label for="numberInput" class="bubbleText"></label>
+                  <div class="col-4">
+                     <input id="numberInput" class="inputs form-control" type="number" name="coffee" value="1" min="1" max="3" />
+                  </div>
+                  <label for="rangeInput" class="bubbleText"></label>
+                  <div class="col-5">
+                     <input id="rangeInput" class="inputs form-control-range" type="range" name="temper" />
+                  </div>
+                  <div id="span-range">
+                     <span id="low">Simple People</span>
+                     <span id="high">Sultan</span>
+                  </div>
+                  <label for="addressInput" class="bubbleText"></label>
+                  <div class="col-5">
+                     <textarea id="addressInput" class="inputs form-control" name="address" rows="1" cols="30"></textarea>
+                  </div>
+                  <section id="checkboxesContainer">
+                     <div class="col-sm-12">
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                           <input id="checkbox1" type="checkbox" name="interests[]" value="Magic Carpet" class="custom-control-input" >
+                           <label class="custom-control-label" for="checkbox1">Magic Carpet</label>
+                        </div>
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                           <input  id="checkbox2" type="checkbox" name="interests[]" value="Camel" class="custom-control-input">
+                           <label class="custom-control-label" for="checkbox2">Camel</label>
+                        </div>
+                        <div class="custom-control custom-checkbox custom-control-inline">
+                           <input id="checkbox3" type="checkbox" name="interests[]" value="Elephant" class="custom-control-input">
+                           <label class="custom-control-label" for="checkbox3">Elephant</label>
+                        </div>
+                     </div>
+                  </section>
+                  <section id="radioContainer">
+                     <div class="col-sm-12">
+                        <div class="custom-control custom-radio custom-control-inline"> 
+                           <input id="radio1" class="custom-control-input" type="radio" name="gender" value="Abu The Monkey" checked/>
+                           <label class="custom-control-label" for="radio1">Abu The Monkey</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline"> 
+                           <input id="radio2" class="custom-control-input" type="radio" name="gender" value="Rajah The Tiger"/>
+                           <label class="custom-control-label" for="radio2">Rajah The Tiger</label>
+                        </div>
+                        <br>
+                        <div class="custom-control custom-radio custom-control-inline"> 
+                           <input id="radio3" class="custom-control-input" type="radio" name="gender" value="Iago The Parrot"/>
+                           <label class="custom-control-label" for="radio3">Iago The Parrot</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline"> 
+                           <input id="radio4" class="custom-control-input" type="radio" name="gender" value="None"/>
+                           <label class="custom-control-label" for="radio4">None</label>
+                        </div>
+                     </div>
+                  </section>
+               </form>
+               <button id="continueBtn" class="continueh" type="button"></button>
+            </div>
+         </div>
+      </main>
+      <footer><span>&copy; Linoy Chubok - Web and Cloud Engineering Course, Shenkar</span></footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+      <script
+         src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+         crossorigin="anonymous"
+         ></script>
+      <script
+         src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+         crossorigin="anonymous"
+         ></script>
+      <script src="js/scripts.js"></script>
+   </body>
+</html>

@@ -1,0 +1,372 @@
+* { margin: 0; padding: 0;}
+main,body,footer { display:block; }
+
+
+
+.wrapper{
+  height: 100%;
+  width: 600px;
+  margin: 0px auto;
+  padding-top: 9%;
+}
+
+
+
+footer
+{
+    bottom: 0;
+    position: fixed;
+    background: #000000;
+    opacity: 0.5;
+    height: 30px;
+    width: 100%;
+}
+
+footer span {
+    font-family:Arial;
+    font-style:normal;
+    font-weight:400;
+    font-size:15px;
+    line-height:30px;
+    margin-left: 5px;
+    color:#FFF;
+    }
+
+html {
+  height: 100%;
+}
+
+body {
+  background-image: url(../images/cave.svg);
+  background-position: center 79%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: hidden; /* Hide horizontal scrollbar */  
+
+}
+
+
+
+#blackScreen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.3;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+    
+
+#lamp{
+  position: absolute;
+  background: url(../images/lamp.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height:22%;
+  width: 22%;
+  top: 52%;
+  left: 33%;
+  cursor:pointer;
+}
+
+
+  /* Lamp Change Color Animation */
+.lampColor {
+  animation: glow 2s ;
+  -webkit-animation: glow 2s ;
+}
+
+@keyframes glow {
+    0%      {filter: drop-shadow(0px 0px 10px #ff0000);}
+    25%     {filter: drop-shadow(0px 0px 10px #ffd000);}
+    50%     {filter: drop-shadow(0px 0px 10px #ff0000);}
+    75%     {filter: drop-shadow(0px 0px 10px #ffd000);}
+    100%    {filter: drop-shadow(0px 0px 10px #ff0000);} 
+}
+
+@-webkit-keyframes glow {
+  /* Safari and Chrome */
+    0%      {-webkit-filter: drop-shadow(0px 0px 10px #ff0000);}
+    25%     {-webkit-filter: drop-shadow(0px 0px 10px #ffd000);}
+    50%     {-webkit-filter: drop-shadow(0px 0px 10px #ff0000);}
+    75%     {-webkit-filter: drop-shadow(0px 0px 10px #ffd000);}
+    100%    {-webkit-filter: drop-shadow(0px 0px 10px #ff0000);}
+}
+/************************************************************************/
+
+/* Lamp Shake Animation */
+.shakeIt:hover { /* id="lamp" class="shakeIt" (set class too, to avoid hover of lamp that lock active event) */
+  animation: shake 0.9s cubic-bezier(.36,.07,.19,.97) both;
+  -webkit-animation: shake 0.9s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  }
+  
+  @keyframes shake {
+    /* Lamp Shake Key Frames */
+    10%, 90% {transform: translate3d(-1%, 0, 0);}
+    20%, 80% {transform: translate3d(1%, 0, 0);}
+    30%, 50%, 70% {transform: translate3d(-3%, 0, 0);}
+    40%, 60% {transform: translate3d(3%, 0, 0);}
+  }
+
+/************************************************************************/
+
+  .final-shakeLemp {
+    animation: shake 2s cubic-bezier(.36,.07,.19,.97) both;
+  }
+ 
+/************************************************************************/
+
+#genie{
+  display: none;
+  position: absolute;
+  background: url(../images/genie.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 95%;
+  width: 95%;
+  z-index: 2;
+  /* height: 550px;
+  width: 550px; */
+  top: 0;
+  filter: drop-shadow(0 0 10px #53bbeb);
+}
+
+/* Genie Levitation Animation */
+.genieLevitation {
+  animation: levitation 2.2s infinite;
+}
+@keyframes levitation {
+  from { transform: translate(0,  0px); }
+  65%  { transform: translate(0, 5px); }
+  to   { transform: translate(0, -0px); } 
+}
+/************************************************************************/
+
+/* Somoke effect */
+#smoke-left {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
+}
+#smoke-right {
+  display: none;
+  position: absolute;
+  bottom:0;
+  left: 17%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0;
+}
+.partOfSmoke {
+  position: absolute;
+  list-style: none;
+  width: 80px;
+  height: 80px;
+  background: #0494d4;
+  border-radius: 50%;
+}
+
+.partOfSmoke:nth-child(even) { 
+  animation: animateEven 3s linear ;
+}
+.partOfSmoke:nth-child(odd) { 
+  animation: animateOdd 3s linear ;
+}
+
+@keyframes animateEven {
+  0%{
+     transform: translate(0,0) scale(1);
+     opacity: 1;
+     filter: blur(5px);  
+    }
+    100%{
+      transform: translate(100px,-500px) scale(1);
+      opacity: 0;
+      filter: blur(10px);  
+     }
+}
+
+@keyframes animateOdd {
+  0%{
+     transform: translate(0,0) scale(1);
+     opacity: 1;
+     filter: blur(5px);  
+    }
+    100%{
+      transform: translate(-100px,-500px) scale(3);
+      opacity: 0;
+      filter: blur(10px);  
+     }
+}
+.partOfSmoke:nth-child(1){
+  animation-delay: 0s;
+}
+.partOfSmoke:nth-child(2){
+  animation-delay: 0.1s;
+}
+.partOfSmoke:nth-child(3){
+  animation-delay: 0.2s;
+}
+.partOfSmoke:nth-child(4){
+  animation-delay: 0.3s;
+}
+.partOfSmoke:nth-child(5){
+  animation-delay: 0.4s;
+
+}
+/************************************************************************/
+
+/* Speech Bubble  */
+ #speech-bubble {
+  display: none;
+  position: relative;
+  background: url(../images/bubble.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* height: 52%;
+  width: 52%; */
+  height: 650px;
+  width: 650px;
+  z-index: 3;
+}
+
+.bubbleText {
+  position: absolute;
+  font-family: 'Princess Sofia', cursive;
+  color: black;
+  font-size: 35px;
+  letter-spacing: 3px;
+  /* top: 23%;
+  left: 25%; */
+  top: 65px;
+  left:165px;
+  white-space: pre-line;
+  
+}
+
+#continueBtn {
+  position: absolute;
+  display: none;
+  visibility: hidden;
+  background-image: url(../images/continue.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* height: 15%;
+  width: 15%; */
+  height: 50px;
+  width: 50px;
+  /* top: 68%;
+  left:86%; */
+  top: 190px;
+  left:550px;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
+.continueh:hover {
+  filter: sepia(90%) hue-rotate(170deg) saturate(500%);
+}
+
+
+/* Inputs */
+.inputs  {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+}
+
+#nameInput{
+  left: 50%;
+  margin-top: 34%;
+}
+
+#idInput{
+  left: 60%;
+  margin-top: 41%;
+}
+
+#addressInput{
+  left: 60%;
+  margin-top: 41%;
+}
+
+textarea{
+  resize: none;
+}
+
+#ageInput
+{
+  left: 75%;
+  margin-top: 58%;
+}
+
+
+#numberInput{
+  left: 75%;
+  margin-top: 70%;
+}
+
+#rangeInput {
+  left: 60%;
+  margin-top: 42%;
+}
+
+#span-range{
+  display: block;
+  visibility: hidden;
+  position: absolute;
+  font-family: 'Princess Sofia', cursive;
+  font-size: 20px;
+  color: #000000;
+  left: 25%;
+  margin-top: 20%;
+  
+}
+#span-range #high{
+  margin-left:120px;
+}
+
+#emailInput{
+  left: 42%;
+  margin-top: 40%;
+}
+
+#websiteInput, #secretInput{
+  left: 43%;
+  margin-top: 29%;
+}
+
+
+#checkboxesContainer  {
+  position: absolute;
+  display: none;
+  visibility: hidden;
+  top: 26%;
+  left:23%;
+}
+
+#radioContainer  {
+  position: absolute;
+  display: none;
+  visibility: hidden;
+  top: 20%;
+  left:23%;
+}
+
+
+
+
