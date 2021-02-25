@@ -4,4 +4,4 @@ As part of forms competition in the "Web and Cloud Engineering" course, we were 
 The form I created is a form for requesting wishes from Genie from the movie Aladdin.
 You must click the lamp to see Genie and then filling the form while talking to Genie.
 
-<img src="https://i.imgur.com/rJf9Okp.gif" width="50%" height="50%"></img>
+<img src="https://i.imgur.com/rJf9Okp.gif" width="55%" height="55%"></img>
